@@ -1,0 +1,14 @@
+.root {
+  /* max-width: 100vw; */
+
+  /* max-width: 1280px; */
+  background-color: #202020;
+  min-height: 100vh;
+  /* margin:auto;     */
+}
+
+.page {
+  /* max-width: 1280px; */
+  margin: auto;
+
+}
