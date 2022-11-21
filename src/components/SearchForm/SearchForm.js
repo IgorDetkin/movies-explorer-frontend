@@ -33,7 +33,11 @@ function SearchForm(props) {
                         <div className="searchForm__find-slider">
                         <button className="searchForm__button-find" type="button"></button>
                         <div className="searchForm__slider-container">
-                            <button className="searchForm__slider" type="button"></button>
+                            <button 
+                            type="button"
+                            className={sliderClassName}
+                            onClick={props.sliderSlide}
+                            ></button>
                             <p className="searchForm__slider-text">Короткометражки</p>
                         </div>
                     </div> 

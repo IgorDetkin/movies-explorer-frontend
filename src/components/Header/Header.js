@@ -6,7 +6,7 @@ import Navigation from '../Navigation/Navigation.js';
 
 function Header(props) {
 
-    const [loggedIn, setLoggedIn] = useState(true);
+    // const [loggedIn, setLoggedIn] = useState(true);
 
 
 
@@ -21,9 +21,9 @@ function Header(props) {
                 </Link>
 
                 <div className="header__buttons">
-                    {loggedIn
-                    ?
-                    <Route path="/">
+
+
+                    <Route exact path="/">
                         <Link to ="/signup">
                             <button className="header__button-reg" type="button">Регистрация</button>  
                         </Link>
@@ -32,9 +32,11 @@ function Header(props) {
                         <button className="header__button-login" type="button">Войти</button>
                         </Link>
                     </Route>   
-                    :
-                    <Navigation/>
-                    }
+
+                    {/* <Route path="/movies">
+                        <Navigation/> 
+                    </Route>  */}
+                    {props.children}
 
 
                 </div>
@@ -50,8 +52,9 @@ export default Header;
 
 
 
-
-{/* <Route exact path="/">
+                                        {/* {loggedIn
+                    ?
+                    <Route path="/">
                         <Link to ="/signup">
                             <button className="header__button-reg" type="button">Регистрация</button>  
                         </Link>
@@ -59,9 +62,7 @@ export default Header;
                         <Link to="signin">
                         <button className="header__button-login" type="button">Войти</button>
                         </Link>
-                    </Route>    */}
-
-                    {/* <Route path="/movies">
-                        <Navigation/> 
-                    </Route>  */}
-                    {/* {props.children} */}
+                    </Route>   
+                    :
+                    <Navigation/>
+                    } */}
