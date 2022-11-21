@@ -19,7 +19,7 @@ function RegLogin(props) {
             
             
                 <div className="reg-login__button-block">
-                    <button className="reg-login__form-submit">
+                    <button className="reg-login__form-submit" type="submit">
                         {props.buttonSubmit}
                     </button>
 

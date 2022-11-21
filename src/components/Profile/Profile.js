@@ -68,7 +68,7 @@ function Profile() {
             Редактировать
           </button>
           <Link to="/signin">
-          <button className="profile__button-exit">Выйти из аккаунта</button>
+          <button className="profile__button-exit" type="button">Выйти из аккаунта</button>
           </Link>
         </div>
       </div>

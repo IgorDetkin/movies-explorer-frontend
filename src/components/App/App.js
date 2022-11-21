@@ -14,9 +14,10 @@ import Error from '../Error/Error.js'
 
 
 
-
 function App() {
 
+
+  const [loggedIn, setLoggedIn] = useState(false);
   
   return (
     <div className="root">

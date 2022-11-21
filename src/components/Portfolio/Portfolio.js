@@ -12,28 +12,37 @@ function Portfolio() {
             <div className="portfolio__container">
                 <h3 className="portfolio__title">Портфолио</h3>
 
-                <div className="portfolio__flex-examples">
-                    <div className="portfolio__example">
-                        <p className="portfolio__example-title">Статичный сайт</p>
-                        <a href="https://igordetkin.github.io/how-to-learn/" className="portfolio_example-link" alt="ссылка"
+                <ul className="portfolio__flex-examples">
+                    <li className="portfolio__example">
+                        <a className="portfolio__example-title" href="https://igordetkin.github.io/how-to-learn/" alt="ссылка"
+                        target="blank">
+                        Статичный сайт
+                        </a>
+                        <a href="https://igordetkin.github.io/how-to-learn/" className="portfolio__example-link" alt="ссылка"
                         target="blank">
                         ↗
                         </a> 
-                    </div>
-                    <div className="portfolio__example">
-                        <p className="portfolio__example-title">Адаптивный сайт</p>
-                        <a href="https://igordetkin.github.io/russian-travel/" className="portfolio_example-link" alt="ссылка"
+                    </li>
+                    <li className="portfolio__example">
+                        <a className="portfolio__example-title" href="https://igordetkin.github.io/russian-travel/" alt="ссылка"
+                        target="blank">
+                            Адаптивный сайт
+                        </a>
+                        <a href="https://igordetkin.github.io/russian-travel/" className="portfolio__example-link" alt="ссылка"
                         target="blank">
                         ↗
                         </a> 
-                    </div>
-                    <div className="portfolio__example">
-                        <p className="portfolio__example-title">Одностраничное приложение</p>
-                        <a href="https://mesto.learnproject.nomoredomains.icu/" className="portfolio_example-link" alt="ссылка" target="blank">
+                    </li>
+                    <li className="portfolio__example">
+                        <a className="portfolio__example-title" href="https://mesto.learnproject.nomoredomains.icu/" alt="ссылка" 
+                        target="blank">
+                            Одностраничное приложение
+                        </a>
+                        <a href="https://mesto.learnproject.nomoredomains.icu/" className="portfolio__example-link" alt="ссылка" target="blank">
                         ↗   
                         </a> 
-                    </div>
-                </div>
+                    </li>
+                </ul>
 
 
             </div>

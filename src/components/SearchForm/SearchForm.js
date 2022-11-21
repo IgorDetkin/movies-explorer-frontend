@@ -27,28 +27,26 @@ function SearchForm(props) {
                                 minLength="2"
                                 maxLength="50"
                             />
-                            
                         </label>
+
+
+                        <div className="searchForm__find-slider">
+                        <button className="searchForm__button-find" type="button"></button>
+                        <div className="searchForm__slider-container">
+                            <button className="searchForm__slider" type="button"></button>
+                            <p className="searchForm__slider-text">Короткометражки</p>
+                        </div>
+                    </div> 
+
                     </form>
 
-                    <div className="searchForm__find-slider">
-                        <button className="searchForm__button-find"></button>
-                        {/* <div className="searchForm__slider-container">
+                    {/* <div className="searchForm__find-slider">
+                        <button className="searchForm__button-find" type="button"></button>
+                        <div className="searchForm__slider-container">
                             <button className="searchForm__slider"></button>
                             <p className="searchForm__slider-text">Короткометражки</p>
-                        </div> */}
-                    </div>
-                    
-                    
-                    <div className="searchForm__slider-container">
-                            <button 
-                            className={sliderClassName}
-                            onClick={props.sliderSlide}
-                            ></button>
-                            <p className="searchForm__slider-text">Короткометражки</p>
-                    </div>
-
-                    
+                        </div>
+                    </div>     */}
                 </div>
             </div>    
         </section>

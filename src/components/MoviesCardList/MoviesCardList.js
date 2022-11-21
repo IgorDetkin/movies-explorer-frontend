@@ -17,7 +17,7 @@ function MoviesCardList(props) {
         <ul className="cardList__grid-container">
           {props.children}
         </ul>
-        <button className={cardListButtonMoreStatus}>Ещё</button>
+        <button className={cardListButtonMoreStatus} type="button">Ещё</button>
       </div>
     </section>
   );

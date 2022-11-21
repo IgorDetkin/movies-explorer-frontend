@@ -1,7 +1,7 @@
 
 .promo {
     background: #073042;
-    margin-top: -74px;
+    margin-top: -78px;
 }
 
 .promo__container {
@@ -40,9 +40,11 @@
       }
 
     .promo__title{
+        width: 680px;
         margin-bottom: 140px;
         text-align: center;
-        width: 100%;
+        /* width: 100%; */
+        align-self: center;
     }
 
     .promo__shape {
@@ -64,6 +66,7 @@
     }
 
     .promo__title{
+        align-self: center;
         margin-bottom: 60px;
         text-align: center;
         width: 300px;

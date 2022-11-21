@@ -26,13 +26,16 @@ function MoviesCard(props) {
         <Switch>
           <Route exact path="/movies">
             <button 
+              type="button"
               className={cardLikeButtonClassName}
               onClick={handleLikeClick}  
             ></button>
           </Route>
 
           <Route path="/saved-movies">
-            <button className="card__delete"></button>
+            <button 
+            type="button"
+            className="card__delete"></button>
           </Route>
 
 

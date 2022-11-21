@@ -178,6 +178,7 @@
     }
 
     .reg-login__flex {
+        width: 100%;
         align-items: center;
     }
 

@@ -126,6 +126,7 @@
     .card__name {
         font-size: 12px;
         line-height: 15px;
+        width: 240px;
     }
 
     .card__length {

@@ -37,10 +37,12 @@ function Navigation(props) {
                         <button 
                         className="navigation__exit-button"
                         onClick={props.onClose}
+                        type="button"
                         ></button>
                 </div>        
 
                 <button 
+                type="button"
                 className="navigation__navtab"
                 onClick={props.onMobileMenu}
                 ></button>
