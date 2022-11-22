@@ -1,0 +1,145 @@
+.header {
+    /* background: #073042; */
+}
+
+.header__container {
+    max-width: 1280px;
+    box-sizing:border-box;
+    padding: 0 70px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.header__logo {
+    margin: 18px 0;
+}
+
+.header__buttons {
+    margin-top: 21px;
+    visibility: visible;
+    /* display: block; */
+    
+}
+
+.header__button-reg {
+    margin-right: 30px;
+    background: none;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    color: #FFFFFF;
+    text-decoration: none;
+    border: 0;
+    cursor: pointer;
+}
+
+.header__button-reg:hover {
+    opacity: 0.7;
+}
+
+.header__button-login {
+    background: #3DDC84;
+    border-radius: 3px;
+    Width: 76px;
+    Height: 32px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    border: 0;
+    cursor: pointer;
+}
+
+.header__button-login:hover {
+    opacity: 0.8;
+}
+
+/* .header__navtab {
+    background-image: url(../../images/navtab.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #202020;
+    margin: 15px 0;
+    width: 44px;
+    height: 44px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: none;
+} */
+
+.header__navtab:hover {
+    opacity: 0.8;
+}
+
+/* .header__button-profile {
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.header__button-profile:hover {
+    opacity: 0.8;
+}
+
+.header__user-name {
+    margin: 0;
+    padding-right: 7px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 12px;
+    color: #FFFFFF;
+}
+
+.header__user-avatar {
+    width: 26px;
+    height: 26px;
+    background: #313131;
+    border-radius: 50px;
+    object-fit: none;
+} */
+
+
+@media all and (min-width: 767px) and (max-width: 1024px) {
+    .header__container {
+      /* max-width: 768px; */
+      padding: 0 30px;
+    }
+}
+
+
+@media all and (min-width: 320px) and (max-width: 767px) {
+    .header__container {
+        /* max-width: 320px;  */
+        padding: 0 14px;
+    }
+
+    .header__button-login {
+        width: 54px;
+        height: 26px;
+        font-size: 10px;
+    }
+
+    .header__buttons {
+        margin-top: 24px;
+    }
+
+    .header__button-reg {
+        margin-right: 4px;
+        font-size: 10px;
+    }
+  }
+
+
+  /* MAX WIDTH НА АДАПТИВЕ ВЕЗДЕ ПОПРОБОВАТЬ УБРАТЬ!!!!! */

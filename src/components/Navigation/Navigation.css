@@ -1,0 +1,321 @@
+.navigation {
+    visibility: visible;
+}
+
+/* .navigation_deactive{
+    visibility: hidden
+} */
+
+.navigation__container {
+    /* margin-top: 28px; */
+    display: flex;
+    flex-direction: row;
+    /* visibility: visible; */
+}
+
+
+.navigation__adaptive {
+    display: flex;
+}
+
+
+.navigation__button-movies:nth-child(3) {
+    margin-left: 16px;
+}
+
+.navigation__button-movies {
+    padding: 5px 0 0 0;
+    margin: 0;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    /* text-align: center; */
+    color: #FFFFFF;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+
+}
+
+.navigation__button-movies:hover {
+    opacity: 0.8;
+}
+
+
+.navigation__button-profile {
+    margin-left: 364px;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.navigation__button-profile:hover {
+    opacity: 0.8;
+}
+
+.navigation__username-margin {
+    margin: 0 7px 0 0;
+}
+
+.navigation__exit-button {
+    display: none;
+}
+
+
+.navigation__user-avatar {
+    width: 26px;
+    height: 26px;
+    background: #313131;
+    border-radius: 50px;
+    object-fit: none;
+}
+
+.navigation__title {
+    display: none;
+}
+
+/* ВНимание!!! */
+.navigation__navtab {
+    background-image: url(../../images/navtab.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #202020;
+    margin: 0;
+    width: 28px;
+    height: 23px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    /* display: none; */
+    visibility: hidden;
+}
+
+
+
+.navigation__button-movies_active {
+    font-weight: 500;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media all and (min-width: 767px) and (max-width: 1024px) {
+    .navigation__mobile{
+        visibility: hidden;
+
+    }
+
+    .navigation__mobile_active{
+        visibility: visible;
+    }
+
+
+    .navigation__container {
+        /* position: relative; */
+        /* top: 0; */
+        /* right: 0; */
+        /* width: 67%; */
+        /* height: 100%; */
+        /* z-index: 2; */
+        /* flex-direction: column; */
+        /* background-color: #303030; */
+    }
+
+    .navigation__opacity {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left:0;
+      bottom: 0;
+      height: 100%;  
+      z-index: 1;
+      background: rgba(0, 0, 0, 0.3);  
+    }
+
+    .navigation__adaptive {
+        background: #202020;
+        position: fixed;
+        top:0;
+        right: 0;
+        width: 67%;
+        height: 100%;
+        z-index: 5;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 159px 90px 90px;
+        box-sizing:border-box;
+    }
+
+    .navigation__button-profile {
+        margin: auto 0 0;
+    }
+
+    .navigation__button-movies {
+        width: 340px;
+        text-align: center;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        padding: 28px 0 0;
+    }
+
+    .navigation__button-movies:nth-child(3) {
+        margin-left: 0;
+        padding-bottom: 28px;
+    }
+
+    .navigation__button-movies_active {
+        text-decoration: underline;
+    }
+
+    .navigation__title {
+        display: block;
+        margin: 0;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+        color: #FFFFFF;
+    }
+
+    .navigation__exit-button {
+        display: block;
+        position: absolute;
+        top: 22px;
+        right: 22px;
+        background-image: url(../../images/exit_nav.svg);
+        width: 22px;
+        height: 22px;
+        background-color: rgba(0, 0, 0, 0);
+        border: none;
+        background-size: 22px;
+    }
+
+    .navigation__navtab {
+        /* display: block; */
+        visibility: visible;
+    }
+  }
+
+  @media all and (min-width: 320px) and (max-width: 767px) {
+    .navigation__mobile{
+        visibility: hidden;
+
+    }
+
+    .navigation__mobile_active{
+        visibility: visible;
+    }
+
+
+    .navigation__opacity {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left:0;
+        bottom: 0;
+        height: 100%;  
+        z-index: 1;
+        background: rgba(0, 0, 0, 0.3);  
+      }
+  
+      .navigation__adaptive {
+          background: #202020;
+          position: fixed;
+          top:0;
+          right: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 5;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+          padding: 144px 10px 46px;
+          box-sizing:border-box;
+      }
+
+      .navigation__button-profile {
+        margin: auto 0 0;
+    }
+
+    .navigation__button-movies {
+        width: 340px;
+        text-align: center;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        padding: 24px 0 0;
+    }
+
+    .navigation__button-movies:nth-child(3) {
+        margin-left: 0;
+        padding-bottom: 28px;
+    }
+
+    .navigation__button-movies_active {
+        text-decoration: underline;
+    }
+
+    .navigation__title {
+        display: block;
+        margin: 0;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        text-align: center;
+        color: #FFFFFF;
+    }
+
+    .navigation__exit-button {
+        display: block;
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        background-image: url(../../images/exit_nav.svg);
+        width: 22px;
+        height: 22px;
+        background-color: rgba(0, 0, 0, 0);
+        border: none;
+        background-size: 22px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    .navigation__navtab {
+        /* display: block; */
+        visibility: visible;
+        width: 22px;
+    }
+  }
