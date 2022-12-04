@@ -11,8 +11,8 @@ function Footer() {
             <div className="footer__flex-links">
                 <p className="footer__year">© 2022</p>
                 <div className="footer__links">
-                    <a className="footer__link" href="https://yandex.eu/">Яндекс.Практикум</a>
-                    <a className="footer__link" href="https://github.com/">Github</a>
+                    <a className="footer__link" href="https://yandex.eu/" target="blank">Яндекс.Практикум</a>
+                    <a className="footer__link" href="https://github.com/" target="blank">Github</a>
                 </div>
             </div>
         </div>

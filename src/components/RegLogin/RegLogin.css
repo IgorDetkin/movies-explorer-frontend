@@ -4,6 +4,7 @@
 
 .reg-login__container {
     /* position: relative; */
+
     max-width: 1280px;
     box-sizing:border-box;
     padding: 70px 442px 70px;
@@ -18,9 +19,10 @@
 }
 
 .reg-login__flex {
+    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: flex-start;
 }
 
@@ -52,10 +54,14 @@
 
 .reg-login__form {
     width: 396px;
-    /* height: 210px; */
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.reg-login__input-wrapper {
+    
 }
 
 .reg-login__form-submit {
@@ -75,6 +81,10 @@
     color: #FFFFFF;
     border: none;
     cursor: pointer;
+}
+
+.reg-login__form-submit_deactive {
+    opacity: 0.5;
 }
 
 
@@ -106,6 +116,7 @@
     color: #4285F4;
     text-decoration: none;
 }
+
 
 .reg-login__subbutton:hover {
     opacity: 0.8;
@@ -149,7 +160,8 @@
 }
 
 .reg-login__name-error {
-    padding-top: 6px;
+    display: none;
+    /* padding-top: 6px; */
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
@@ -158,7 +170,9 @@
     color: #EE3465;
 }
 
-
+.reg-login__name-error_active {
+    display: block;
+}
 
 
 

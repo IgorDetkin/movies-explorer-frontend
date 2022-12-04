@@ -13,9 +13,14 @@
 
 .card__img {
     align-self: center;
+    justify-self: center;
+    width: 364px;
     height: 203px;
-    object-fit: cover;
-    
+    object-fit: contain;
+}
+
+.card__img-link {
+
 }
 
 .card__name-like {
@@ -102,6 +107,7 @@
 
     .card__img {
         height: 190px;
+        width: 339px;
     }
 
     .card__name-like {
@@ -117,6 +123,7 @@
    
     .card__img {
         height: 168px;
+        width: 300px;
     }
 
     .card__name-like {
