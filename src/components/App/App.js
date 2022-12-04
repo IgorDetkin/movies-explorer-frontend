@@ -262,7 +262,6 @@ function App() {
 
             <Route  path="*">
               <Error
-              loggedIn={loggedIn}
               />
             </Route>
           </Switch>
