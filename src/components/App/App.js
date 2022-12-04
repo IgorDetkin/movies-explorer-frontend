@@ -1,5 +1,5 @@
 import React, { useEffect, useState }  from 'react'; 
-import { Route, Switch, Redirect, Link, useHistory } from "react-router-dom";
+import { Route, Switch, Redirect, Link, useHistory, useLocation } from "react-router-dom";
 import './App.css';
 import Header from '../Header/Header.js';
 import Footer from '../Footer/Footer.js';
@@ -21,6 +21,7 @@ import CurrentUserContext from "../contexts/CurrentUserContext";
 function App() {
 
   const history = useHistory();
+  const location = useLocation()
 
 
 //вход
@@ -71,9 +72,7 @@ function App() {
             // если есть эта data
             // console.log(res)
             setLoggedIn(true); // то тогда пропускаем пользователя
-            history.push("/"); // это чтобы мы сразу попадали на главную
-            // setEmail(res.data.email); // это чтобы появлялся емайл в хэдере
-
+            history.push(location.pathname); // если тут будет конкретный адрес, то тогда страница error сама будет перезагружаться 
           }
         })
         .catch((err) => {
@@ -99,7 +98,6 @@ function App() {
     return auth
       .register({name, email, password }) //из auth.js
       .then(() => {
-        // setIsSignYesPopupOpen(true);
         setIsResultRequest(true);
         // setLoggedIn(true);
         localStorage.clear();
@@ -107,7 +105,6 @@ function App() {
       })
       .catch((err) => {
         console.log(err);
-        // setIsSignYesPopupOpen(true);
         setIsResultRequest(false);
       });
   }
@@ -220,8 +217,6 @@ function App() {
               loggedIn={loggedIn}
               />
             </Route>
-            
-
 
             <ProtectedRoute 
               path="/movies"
@@ -260,10 +255,13 @@ function App() {
               <Login onLogin={handleLogin}/>
             </Route>
 
-            <Route  path="*">
+            <Route path="*">
               <Error
+              // loggedIn={loggedIn}
               />
             </Route>
+
+            
           </Switch>
 
           </>
