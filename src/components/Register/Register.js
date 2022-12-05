@@ -50,6 +50,7 @@ function Register(props) {
           type="text"
           placeholder="Ваше имя"
           value={checkValid.values.name || ''}
+          pattern='[a-zA-Z0-9А-Яа-яЁё._:$!%@\s-]+'
           onChange={checkValid.handleChange}
           className="reg-login__input"
           required
@@ -67,6 +68,7 @@ function Register(props) {
           id="email-input"
           type="email"
           placeholder="email"
+          pattern='^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+\.+(\w{2,})$'
           value={checkValid.values.email || ''}
           onChange={checkValid.handleChange}
           className="reg-login__input"
@@ -85,6 +87,7 @@ function Register(props) {
           id="password-input"
           type="password"
           placeholder="пароль"
+          pattern='[a-zA-Z0-9._\W\s-]+'
           value={checkValid?.values?.password || ''}
           onChange={checkValid.handleChange}
           className="reg-login__input"

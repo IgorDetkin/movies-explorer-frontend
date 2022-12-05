@@ -1,4 +1,4 @@
-import React, { useEffect, useState }  from "react";
+import React, { useEffect, useState, useContext }  from "react";
 import { Link, Route } from "react-router-dom";
 import "./Profile.css";
 import Header from "../Header/Header.js";
@@ -7,19 +7,23 @@ import CurrentUserContext from "../contexts/CurrentUserContext";
 import useValidation from '../../utils/validation';
 
 
+
 /* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
 
 function Profile(props) {
 
-  const currentUser = React.useContext(CurrentUserContext);
 
-  // const {values, isValid, errors, setValues, setIsValid, handleChange} = useValidation();
+  const currentUser = useContext(CurrentUserContext);
 
   const checkValid = useValidation();
   const { name, email } = checkValid.errors;
 
   const errorValidClassName = (`profile__name-error ${checkValid.isValid ? '' : 'profile__name-error_active'}`);
+
+  const editCompleteClassName = (`profile__complete ${props.resultRequest ? 'profile__complete_active' : ''}`)
+
+  const submitProfileClassName = (`profile__button-edit ${!checkValid.isValid ? 'profile__button-edit_deactive' : ''}`);
 
 
   useEffect(() => {
@@ -29,6 +33,16 @@ function Profile(props) {
     });
   }, [currentUser]);
 
+  useEffect(() => {
+    if (currentUser.name === checkValid.values.name 
+        && currentUser.email === checkValid.values.email) {
+      checkValid.setIsValid(false);
+    }
+  }, [checkValid.values, currentUser]);
+
+
+
+
   function handleSubmit(event) {
     event.preventDefault();
     props.onUpdateUser({
@@ -37,7 +51,13 @@ function Profile(props) {
     });
   }
 
-  const submitProfileClassName = (`profile__button-edit ${!checkValid.isValid ? 'profile__button-edit_deactive' : ''}`);
+
+
+
+
+
+
+
 
   return (
     <>
@@ -62,8 +82,7 @@ function Profile(props) {
                   id="name-input"
                   type="text"
                   placeholder="Имя"
-                  // value={name}
-                  // onChange={handleChangeName}
+                  pattern='[a-zA-Z0-9А-Яа-яЁё._:$!%@\s-]+'
                   value={checkValid.values.name}
                   onChange={checkValid.handleChange}
                   className="profile__input"
@@ -76,25 +95,25 @@ function Profile(props) {
             </div>
 
             <div className="profile__form-wrapper">
-            <label className="profile__form-field">
-              <h3 className="profile__input-title">E-mail</h3>
-              <input
-                name="email"
-                id="email-input"
-                type="email"
-                placeholder="адрес"
-                // value={email}
-                // onChange={handleChangeEmail}
-                value={checkValid.values.email}
-                onChange={checkValid.handleChange}
-                className="profile__input"
-                required
-                minLength="2"
-                maxLength="40"
-              />
-            </label>
-            <span className={errorValidClassName}>{email}</span>
+              <label className="profile__form-field">
+                <h3 className="profile__input-title">E-mail</h3>
+                <input
+                  name="email"
+                  id="email-input"
+                  type="email"
+                  placeholder="адрес"
+                  pattern='^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+\.+(\w{2,})$'
+                  value={checkValid.values.email}
+                  onChange={checkValid.handleChange}
+                  className="profile__input"
+                  required
+                  minLength="2"
+                  maxLength="40"
+                />
+              </label>
+              <span className={errorValidClassName}>{email}</span>
             </div>
+            <h3 className={editCompleteClassName}>Данные успешно обновлены</h3>
 
           <button 
             className={submitProfileClassName}

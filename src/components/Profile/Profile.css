@@ -153,6 +153,23 @@
 }
 
 
+.profile__complete {
+    visibility: hidden;
+    align-self: center;
+    color: #3DDC84;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    margin: 20px 0 -34px;
+}
+
+.profile__complete_active {
+    visibility: visible;
+}
+
+
 @media all and (min-width: 767px) and (max-width: 1024px) {
     .profile__container {
       max-width: 768px;

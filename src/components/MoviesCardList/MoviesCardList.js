@@ -90,19 +90,19 @@ useEffect(() => {
                 : (savedMoviesPage 
                     
                     ? (moviesArray.map((data) => ( //создание массива сохраненны фильмов
-                        <MoviesCard
-                          key={data._id} 
-                          card={data} 
-                          savedPage={savedMoviesPage}
-                          onDelete={onDelete}
-                        />
-                      ))
+                          <MoviesCard
+                            key={data._id} 
+                            card={data} 
+                            savedPage={savedMoviesPage}
+                            onDelete={onDelete}
+                          />
+                          ))
                       )
 
 
-                    : (showFilmList.length === 0 || isEmptyList
+                    : (showFilmList.length === 0 || isEmptyList 
                         
-                        ? <h2 className="cardList__text-error">Ничего не найдено</h2> 
+                        ? <h2 className="cardList__text-error">{isEmptyList ? 'Ничего не найдено' : ''}</h2> 
                         
                         : ( showFilmList.map((data) => { // создания массива стандартных карточек
                               const isCardSaved = getSavedMovieCard(savedMovies, data.id);
@@ -168,6 +168,25 @@ export default MoviesCardList;
   //     ? "cardList__button-more"
   //     : "cardList__button-more_hidden"
   // }`;
+
+
+// добавление информационных сообщений на странице сохраенных фильмов
+  // ( moviesArray.length === 0 || isEmptyList 
+
+  //   ? <h2 className="cardList__text-error">{isEmptyList ? 'Ничего не найдено' : 'Добавьте фильм в избранное'}</h2> 
+
+  //   : ( moviesArray.map((data) => ( //создание массива сохраненны фильмов
+  //     <MoviesCard
+  //       key={data._id} 
+  //       card={data} 
+  //       savedPage={savedMoviesPage}
+  //       onDelete={onDelete}
+  //     />
+  //     ))
+  //     )
+  // )
+
+ 
 
 
 

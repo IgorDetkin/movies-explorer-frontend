@@ -30,6 +30,9 @@ function App() {
   const [isResultRequest, setIsResultRequest] = useState(false);
   const [savedMovies, setSavedMovies] = useState([]);
 
+
+
+
   useEffect(() => {
     if (loggedIn) {
       //проверка чтобы запросы не выполнялись, когда пользователь не вошел
@@ -46,15 +49,19 @@ function App() {
   }, [loggedIn]);
 
 
+
+
   function handleUpdateUser(data) {
     newApi
       .editUserProfile(data)
       .then((res) => {
         setCurrentUser(res.data);
-        // closeAllPopups();
+        setIsResultRequest(true);
+        setTimeout(() => setIsResultRequest(false), 2000);
       })
       .catch((err) => {
         console.log(err);
+        setIsResultRequest(false);
       })
   }
 
@@ -77,6 +84,8 @@ function App() {
         })
         .catch((err) => {
           console.log(err);
+          // localStorage.clear();
+          handleSignOut();
         });
     }
   }
@@ -98,14 +107,14 @@ function App() {
     return auth
       .register({name, email, password }) //из auth.js
       .then(() => {
-        setIsResultRequest(true);
+        // setIsResultRequest(true);
         // setLoggedIn(true);
         localStorage.clear();
-        history.push("/signin");
+        handleLogin({ email, password });
       })
       .catch((err) => {
         console.log(err);
-        setIsResultRequest(false);
+        // setIsResultRequest(false);
       });
   }
 
@@ -154,8 +163,6 @@ function App() {
 
 
   
-  // const moviesDataArray = Array.prototype.slice(moviesData, 0)
-  // const [start, setLoggedIn] = useState(false);
 
   useEffect(() => {
     // debugger;
@@ -164,7 +171,7 @@ function App() {
         .then(
           (movies) => {
           setSavedMovies(movies.data);
-          localStorage.setItem('savedMovies', JSON.stringify(movies))
+          // localStorage.setItem('savedMovies', JSON.stringify(movies))
         })
         .catch((err) => {
           console.log(err);
@@ -192,8 +199,8 @@ function App() {
     newApi.deleteCard(movie._id)
       .then(() => {
         const newMoviesList = savedMovies.filter((item) => item._id === movie._id ? false : true); // фильтруем сохраненки
-        setSavedMovies(newMoviesList); // получаем новый список сохраненок
-        localStorage.setItem('savedMovies', JSON.stringify(savedMovies)); //сохранить обновленный список
+        setSavedMovies(newMoviesList); // новый список сохраненок
+        // localStorage.setItem('savedMovies', JSON.stringify(savedMovies)); //сохранить обновленный список
       })
       .catch(err => {
         console.log(err)
@@ -214,7 +221,7 @@ function App() {
             
             <Route exact path="/">
               <Main
-              loggedIn={loggedIn}
+              loggedIn={loggedIn} // попробовать убрать это(чтобы не происходил редирект постоянный)
               />
             </Route>
 
@@ -245,14 +252,21 @@ function App() {
               loggedIn={loggedIn}
               onUpdateUser={handleUpdateUser}
               onClick={handleSignOut}
+              resultRequest={isResultRequest}
               />
 
             <Route  path="/signup">
-              <Register onRegister={handleRegister}/>
+              {loggedIn 
+                ? <Redirect to="/movies"/> 
+                : <Register onRegister={handleRegister}/>
+              }
             </Route>
 
             <Route  path="/signin">
-              <Login onLogin={handleLogin}/>
+              {loggedIn 
+                ? <Redirect to="/movies"/> 
+                : <Login onLogin={handleLogin}/>
+              }
             </Route>
 
             <Route path="*">

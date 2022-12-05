@@ -142,7 +142,7 @@ function handleSubmit(value) {
           onCheckbox={handleShortMovies}
           shortMovies={shortMovies}
           savedMoviesPage={false}
-          setIsEmptyFound={setIsEmptyFound}
+          IsEmptyList={isEmptyFound}
         />
         <MoviesCardList
           isLoading={isMoviesLoading}

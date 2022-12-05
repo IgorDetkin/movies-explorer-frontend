@@ -45,8 +45,7 @@ function Login(props) {
           id="email-input"
           type="email"
           placeholder="email"
-          // value={email || ""} 
-          // onChange={handleAddEmail}
+          pattern='^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+\.+(\w{2,4})$'
           value={checkValid.values.email || ''}
           onChange={checkValid.handleChange}
           className="reg-login__input"
@@ -64,8 +63,7 @@ function Login(props) {
           id="password-input"
           type="password"
           placeholder="пароль"
-          // value={password || ""} 
-          // onChange={handleAddPassword}
+          pattern='[a-zA-Z0-9._\W\s-]+'
           value={checkValid.values.password || ''}
           onChange={checkValid.handleChange}
           className="reg-login__input"

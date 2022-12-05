@@ -3,7 +3,7 @@ import "./SearchForm.css";
 import find from "../../images/lupa.svg";
 import useValidation from '../../utils/validation';
 
-function SearchForm({onSearchClick, savedMoviesPage, shortMovies, onCheckbox}) {
+function SearchForm({onSearchClick, savedMoviesPage, shortMovies, onCheckbox, IsEmptyList}) {
   
     const {values, isValid, errors, setValues, setIsValid, handleChange} = useValidation();
 
@@ -21,6 +21,10 @@ function SearchForm({onSearchClick, savedMoviesPage, shortMovies, onCheckbox}) {
 
     function handleSubmit(event) {
         // debugger;
+
+        // if(value === "") {
+        //     IsEmptyList
+        // }
         event.preventDefault();
         onSearchClick(values.req);
       }
