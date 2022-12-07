@@ -6,12 +6,16 @@ import AboutProject from '../AboutProject/AboutProject.js';
 import Techs from '../Techs/Techs.js';
 import AboutMe from '../AboutMe/AboutMe.js';
 import Portfolio from '../Portfolio/Portfolio.js';
+import CurrentUserContext from "../contexts/CurrentUserContext";
 
-function Main() { 
+function Main(props) { 
+    const currentUser = React.useContext(CurrentUserContext);
 
     return(
         <>
-        <Header/>
+        <Header
+        loggedIn={props.loggedIn}
+        />
         <Promo/>
         <AboutProject/>
         <Techs/>

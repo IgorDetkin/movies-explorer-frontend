@@ -25,7 +25,7 @@
 
 }
 
-.cardList_button-more {
+.cardList__button-more {
     border: none;
     margin-top: 60px;
     padding: 0;
@@ -45,12 +45,24 @@
     display: block;
 }
 
-.cardList_button-more_hidden {
+.cardList__button-more_hidden {
     /* visibility: hidden; */
     display: none;
 }
-.cardList_button-more:hover {
+.cardList__button-more:hover {
     opacity: 0.8;
+}
+
+
+.cardList__text-error {
+    text-align: center;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    /* text-align: center; */
+    color: #FFFFFF;
 }
 
 @media all and (min-width: 767px) and (max-width: 1024px) {

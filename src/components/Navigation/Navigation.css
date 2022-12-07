@@ -18,6 +18,9 @@
     display: flex;
 }
 
+#mainMobile {
+    display: none;
+}
 
 .navigation__button-movies:nth-child(3) {
     margin-left: 16px;
@@ -177,6 +180,10 @@
         padding: 28px 0 0;
     }
 
+    #mainMobile {
+        display: block;
+    }
+
     .navigation__button-movies:nth-child(3) {
         margin-left: 0;
         padding-bottom: 28px;
@@ -196,6 +203,7 @@
         line-height: 22px;
         text-align: center;
         color: #FFFFFF;
+        text-decoration: none;
     }
 
     .navigation__exit-button {
@@ -266,6 +274,10 @@
         font-size: 18px;
         line-height: 22px;
         padding: 24px 0 0;
+    }
+
+    #mainMobile {
+        display: block;
     }
 
     .navigation__button-movies:nth-child(3) {

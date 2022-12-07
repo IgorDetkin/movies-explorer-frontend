@@ -1,12 +1,25 @@
-import React from "react";
+import React, { useEffect, useState }  from "react";
 import { NavLink, Route } from "react-router-dom";
 import './Navigation.css';
 import user_avatar from "../../images/user_avatar.svg";
+import CurrentUserContext from "../contexts/CurrentUserContext";
 
 function Navigation(props) {
+    const currentUser = React.useContext(CurrentUserContext);
+
+
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const mobileMenuClick = () => {
+        setIsMobileMenuOpen(!isMobileMenuOpen);
+    };
+
+  const closeMenu = () => {
+    setIsMobileMenuOpen(false);
+  }
+
 
     const navigationClassName = (
-        `navigation ${props.isOpen ? 'navigation__mobile_active' : 'navigation__mobile'}`
+        `navigation ${isMobileMenuOpen ? 'navigation__mobile_active' : 'navigation__mobile'}`
       ); 
 
     return(
@@ -14,7 +27,11 @@ function Navigation(props) {
             <div className="navigation__container">
                 <div className="navigation__adaptive">
 
-                        <h3 className="navigation__title">Главная</h3>
+                        {/* <h3 className="navigation__title">Главная</h3> */}
+
+                        <NavLink exact to="/" className="navigation__button-movies" id="mainMobile" activeClassName="navigation__button-movies_active">
+                            Главная
+                        </NavLink>
 
                         <NavLink to="/movies" className="navigation__button-movies" activeClassName="navigation__button-movies_active">
                             Фильмы
@@ -28,7 +45,7 @@ function Navigation(props) {
                         <button className="navigation__button-profile" type="button">
                             <div className="navigation__username-margin">
                                 <NavLink to ="/profile" className="navigation__button-movies" activeClassName="navigation__button-movies_active">
-                                    Username       
+                                    {currentUser.name}       
                                 </NavLink>
                             </div>
                             <img className="navigation__user-avatar" src={user_avatar} alt="аватар"/>
@@ -36,7 +53,7 @@ function Navigation(props) {
 
                         <button 
                         className="navigation__exit-button"
-                        onClick={props.onClose}
+                        onClick={closeMenu}
                         type="button"
                         ></button>
                 </div>        
@@ -44,7 +61,7 @@ function Navigation(props) {
                 <button 
                 type="button"
                 className="navigation__navtab"
-                onClick={props.onMobileMenu}
+                onClick={mobileMenuClick}
                 ></button>
 
                 <div className="navigation__opacity"></div>
