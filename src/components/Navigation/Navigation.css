@@ -196,6 +196,7 @@
         background-color: rgba(0, 0, 0, 0);
         border: none;
         background-size: 22px;
+        background-repeat: no-repeat;
     }
 
     .navigation__navtab {
@@ -291,6 +292,7 @@
         background-color: rgba(0, 0, 0, 0);
         border: none;
         background-size: 22px;
+        background-repeat: no-repeat;
     }
 
 
