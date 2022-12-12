@@ -102,7 +102,7 @@ useEffect(() => {
 
                     : (showFilmList.length === 0 || isEmptyList 
                         
-                        ? <h2 className="cardList__text-error">{isEmptyList ? 'Ничего не найдено' : ''}</h2> 
+                        ? <h2 className="cardList__text-error">{isEmptyList ? 'Ничего не найдено' : 'Начинайте искать!'}</h2> 
                         
                         : ( showFilmList.map((data) => { // создания массива стандартных карточек
                               const isCardSaved = getSavedMovieCard(savedMovies, data.id);

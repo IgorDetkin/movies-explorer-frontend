@@ -156,7 +156,9 @@
 }
 
 .reg-login__input:focus {
-    background: #242424;
+    background: #282828;
+    outline: 1px solid #454545;
+    border-radius: 3px;
 }
 
 .reg-login__name-error {

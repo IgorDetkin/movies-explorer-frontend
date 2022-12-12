@@ -20,11 +20,6 @@ function SearchForm({onSearchClick, savedMoviesPage, shortMovies, onCheckbox, Is
     
 
     function handleSubmit(event) {
-        // debugger;
-
-        // if(value === "") {
-        //     IsEmptyList
-        // }
         event.preventDefault();
         onSearchClick(values.req);
       }

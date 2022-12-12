@@ -56,8 +56,6 @@ function filterShortMovies(movies){
 
 
 
-// ПОТОМ
-
   function handleSetFilteredMovies (movies, request) {
     const requestedMoviesList = filterMovies(movies, request, "off"); // все фильмы по запросу, состояние чекбокса
     selectShortMovie(requestedMoviesList)
@@ -87,6 +85,8 @@ function handleSubmit(value) {
         })
         .finally(() => setIsMoviesLoading(false))
     }
+
+
     
     
     else {
@@ -126,6 +126,7 @@ function handleSubmit(value) {
     checkEmptySearch(arr)
     // console.log(arr)
   }
+  
 }, [reqSearch, initialMovies, shortMovies, ]) 
 
 
@@ -142,7 +143,7 @@ function handleSubmit(value) {
           onCheckbox={handleShortMovies}
           shortMovies={shortMovies}
           savedMoviesPage={false}
-          IsEmptyList={isEmptyFound}
+          isEmptyList={isEmptyFound}
         />
         <MoviesCardList
           isLoading={isMoviesLoading}

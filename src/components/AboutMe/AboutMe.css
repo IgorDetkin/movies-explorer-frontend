@@ -91,6 +91,7 @@
     width: 270px;
     height: 327px;
     object-fit: cover;
+    object-position: left bottom;
     border-radius: 10px;
 }
 

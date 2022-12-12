@@ -8,7 +8,7 @@ import pointer from "../../images/pointer.svg";
 function Portfolio() {
     
     return(
-        <section className="portfolio">
+        <section className="portfolio" id="portfolio-id">
             <div className="portfolio__container">
                 <h3 className="portfolio__title">Портфолио</h3>
 

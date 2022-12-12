@@ -2,15 +2,9 @@
     visibility: visible;
 }
 
-/* .navigation_deactive{
-    visibility: hidden
-} */
-
 .navigation__container {
-    /* margin-top: 28px; */
     display: flex;
     flex-direction: row;
-    /* visibility: visible; */
 }
 
 
@@ -34,7 +28,6 @@
     font-weight: 400;
     font-size: 13px;
     line-height: 18px;
-    /* text-align: center; */
     color: #FFFFFF;
     background: none;
     border: none;
@@ -96,11 +89,9 @@
     border: none;
     padding: 0;
     cursor: pointer;
-    /* display: none; */
     visibility: hidden;
+    outline: none;
 }
-
-
 
 .navigation__button-movies_active {
     font-weight: 500;
@@ -126,18 +117,6 @@
 
     .navigation__mobile_active{
         visibility: visible;
-    }
-
-
-    .navigation__container {
-        /* position: relative; */
-        /* top: 0; */
-        /* right: 0; */
-        /* width: 67%; */
-        /* height: 100%; */
-        /* z-index: 2; */
-        /* flex-direction: column; */
-        /* background-color: #303030; */
     }
 
     .navigation__opacity {

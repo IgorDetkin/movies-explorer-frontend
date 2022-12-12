@@ -29,7 +29,7 @@ function Register(props) {
     e.preventDefault();
     const { name, email, password } = checkValid.values;
     props.onRegister({ name, email, password });
-    checkValid.resetForm();
+    // checkValid.resetForm();
   }
 
 

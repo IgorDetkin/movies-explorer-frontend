@@ -14,6 +14,7 @@ import ProtectedRoute from "../ProtectdRoute/ProtectedRoute.js";
 import newApi from '../../utils/MainApi';
 import * as auth from "../../utils/Auth.js";
 import CurrentUserContext from "../contexts/CurrentUserContext";
+// import useValidation from '../../utils/validation';
 
 
 
@@ -21,10 +22,9 @@ import CurrentUserContext from "../contexts/CurrentUserContext";
 function App() {
 
   const history = useHistory();
-  const location = useLocation()
+  const location = useLocation();
 
 
-//вход
   const [loggedIn, setLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
   const [isResultRequest, setIsResultRequest] = useState(false);
@@ -98,6 +98,7 @@ function App() {
       // если есть токен, то
       tokenCheck(jwt); //вызываем функцию с аргументом в виде токена
     }
+    else {handleSignOut()}; // если удалить токен в браузере во вкладке application то локал стораж чистится.
   }, []);
 
 
@@ -121,6 +122,7 @@ function App() {
 
 
   function handleLogin({ email, password }) {
+    // debugger;
     return auth
       .authorize({ email, password })
       .then((res) => {
@@ -128,7 +130,6 @@ function App() {
           setLoggedIn(true);
           localStorage.setItem("jwt", res.token); //сохранение данных
           history.push('/movies');
-          // setEmail(email);
           newApi.getUserInfo() 
             .then((res) => {
               setCurrentUser(res.data);
@@ -221,7 +222,7 @@ function App() {
             
             <Route exact path="/">
               <Main
-              loggedIn={loggedIn} // попробовать убрать это(чтобы не происходил редирект постоянный)
+              loggedIn={loggedIn}
               />
             </Route>
 
@@ -233,7 +234,6 @@ function App() {
               savedMoviesList={savedMovies}
               onLikeClick={handleSaveMovie}
               onDeleteClick={handleDeleteMovie}
-              // movies={movies}
               />
             
             <ProtectedRoute  
@@ -243,7 +243,6 @@ function App() {
               
               savedMoviesList={savedMovies}
               onDeleteClick={handleDeleteMovie}
-              // savedMovies={savedMovies}
               />
 
             <ProtectedRoute  

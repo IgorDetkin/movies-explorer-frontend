@@ -7,7 +7,7 @@ import CurrentUserContext from "../contexts/CurrentUserContext";
 function Navigation(props) {
     const currentUser = React.useContext(CurrentUserContext);
 
-
+    // const [isOpen, setIsOpen] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const mobileMenuClick = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -16,6 +16,20 @@ function Navigation(props) {
   const closeMenu = () => {
     setIsMobileMenuOpen(false);
   }
+
+  useEffect(() => {
+    function handleEscClose(evt) {
+      if (evt.key === "Escape") {
+        closeMenu();
+      }
+    }
+    if (isMobileMenuOpen) {
+      document.addEventListener("keydown", handleEscClose);
+      return () => {
+        document.removeEventListener("keydown", handleEscClose);
+      };
+    }
+  }, [isMobileMenuOpen]);
 
 
     const navigationClassName = (
@@ -64,22 +78,11 @@ function Navigation(props) {
                 onClick={mobileMenuClick}
                 ></button>
 
-                <div className="navigation__opacity"></div>
-
-                
-                    
+                <div className="navigation__opacity" onClick={closeMenu}></div>
+    
             </div>
         </div>
     )
 }
 
 export default Navigation;
-
-{/* <NavLink to ="/profile" activeClassName="navigation__button-movies_active">
-                <button className="navigation__button-profile" type="button">
-                    <div className="navigation__username-margin">
-                        <p className="navigation__button-movies">Username</p>
-                    </div>
-                    <img className="navigation__user-avatar" src={user_avatar} alt="аватар"/>
-                </button>
-            </NavLink> */}

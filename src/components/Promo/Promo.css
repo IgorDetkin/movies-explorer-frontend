@@ -1,3 +1,20 @@
+@keyframes slidein {
+    from {
+      padding-right: 0;
+      opacity: 0.4;
+    }
+
+    50% {
+        
+        opacity: 0.7;
+      }
+  
+    to {
+        padding-right:40px;
+        opacity: 0.4;
+    }
+
+  }
 
 .promo {
     background: #073042;
@@ -32,6 +49,31 @@
 }
 
 
+.promo__next-wrapper {
+    width: 100%;
+    text-align: center;
+}
+
+
+.promo__next {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #e8ebea;
+    text-decoration: none;
+    animation-duration: 5s;
+    animation-name: slidein;
+    animation-iteration-count:infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+}
+
+
+
   @media all and (min-width: 767px) and (max-width: 1024px) {
     .promo__container{
         /* max-width: 768px; */
@@ -55,6 +97,23 @@
   }
 
   @media all and (min-width: 320px) and (max-width: 767px) {
+    @keyframes slidein {
+        from {
+          padding-right: 0;
+          opacity: 0.2;
+        }
+    
+        50% {
+            
+            opacity: 0.8;
+          }
+      
+        to {
+            opacity: 0.2;
+        }
+    
+      }
+    
 
     .promo {
         overflow: hidden;
@@ -76,5 +135,15 @@
 
     .promo__shape {
         align-self:center;
+    }
+
+    .promo__next {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 14px;
+        animation-duration: 3s;
+        animation-timing-function: ease;
     }
 }

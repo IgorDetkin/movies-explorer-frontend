@@ -6,7 +6,7 @@ import Navigation from '../Navigation/Navigation.js';
 
 function Header(props) {
     return(
-        <header className="header">
+        <header className="header" id="header-id">
             <div className="header__container">
                 
                 <Link to="/">

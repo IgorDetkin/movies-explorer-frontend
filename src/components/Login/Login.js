@@ -19,11 +19,11 @@ function Login(props) {
     // setPassword(e.target.value);
   // }
 
-  function handleSubmit(e) {
-    e.preventDefault();
+  function handleSubmit(event) {
+    event.preventDefault();
     const { email, password } = checkValid.values;
     props.onLogin({ email, password });
-    checkValid.resetForm();
+    // checkValid.resetForm();
   }
 
 
