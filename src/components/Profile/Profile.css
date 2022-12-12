@@ -56,6 +56,7 @@
 }
 
 .profile__input {
+    padding: 0 2px;
     width: 85%;
     margin: 0;
     font-family: 'Inter';
