@@ -26,6 +26,7 @@
     фильм, зарегистрироваться-авторизоваться-получить токен, изменить   
     данные пользователя.
 
+Проект размещен, собран и запущен на виртуальной машине.
 
 ### Реализованные возможности для пользователя: 
 
@@ -64,6 +65,10 @@
 на страницу ERROR.  
 
 [Movies-explorer](https://beatfilm.learnproject.nomoredomains.icu/)  
-[Макет сайта в Figma](https://www.figma.com/file/YnRLfQ6IWRm7sHT000zof9/Diploma-(Copy)?node-id=932%3A2618&t=9RIy8NBpB4s9Nn1s-0)
+
+[Макет сайта в Figma](https://www.figma.com/file/YnRLfQ6IWRm7sHT000zof9/Diploma-(Copy)?node-id=932%3A2618&t=9RIy8NBpB4s9Nn1s-0)  
+
+[Репозиторий бэкенда для этого сайта](https://github.com/IgorDetkin/movies-explorer-api)
+
 
 
